@@ -1,0 +1,138 @@
+<html dir="ltr" lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>بازی حافظه فارسی</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>بازی حافظه فارسی</h1>
+    <p class="copyright">کاری از علی قلی پور گودرزی</p>
+    <div class="stats">
+      <div id="timer">زمان: <span>60</span></div>
+      <div id="score">امتیاز: <span>0</span></div>
+    </div>
+    
+    <div id="difficultyDescription" class="difficulty-description"></div>
+    
+    <div class="font-size-controls">
+      <button id="decreaseFontSize">A-</button>
+      <button id="increaseFontSize">A+</button>
+    </div>
+    
+    <div id="game-board"></div>
+    <div class="button-container">
+      <button id="start">شروع</button>
+      <button id="restart" style="display: none;">شروع دوباره</button>
+      <button id="customize">شخصی سازی</button>
+      <button id="guide">راهنما</button>
+      <button id="soundToggle">
+        <span class="sound-on">🔊</span>
+        <span class="sound-off" style="display: none;">🔇</span>
+      </button>
+      <button id="home">🏠</button>
+      <div class="game-size-controls">
+        <button id="decreaseSize">-</button>
+        <button id="increaseSize">+</button>
+      </div>
+      <button id="showResults">نتایج 📊</button>
+    </div>
+    
+    <!-- Custom Words Modal -->
+    <div id="customModal" class="modal">
+      <div class="modal-content">
+        <h2>افزودن کلمات دلخواه</h2>
+        <div class="card-count-selector">
+          <label for="cardCount">تعداد کارت‌ها:</label>
+          <select id="cardCount">
+            <option value="8">8 کارت (4 جفت)</option>
+            <option value="16" selected>16 کارت (8 جفت)</option>
+            <option value="24">24 کارت (12 جفت)</option>
+          </select>
+        </div>
+        <div class="timer-selector">
+          <label for="customTimer">مدت زمان (ثانیه):</label>
+          <select id="customTimer">
+            <option value="30">30 ثانیه</option>
+            <option value="60" selected>60 ثانیه</option>
+            <option value="90">90 ثانیه</option>
+            <option value="120">120 ثانیه</option>
+          </select>
+        </div>
+        <div class="difficulty-buttons">
+          <button id="easyMode" class="difficulty-btn">
+            آسان
+            <div class="tooltip">کلمات ساده ۲ تا ۴ حرفی</div>
+          </button>
+          <button id="mediumMode" class="difficulty-btn">
+            متوسط
+            <div class="tooltip">کلمات ۳ تا ۵ حرفی</div>
+          </button>
+          <button id="hardMode" class="difficulty-btn">
+            سخت
+            <div class="tooltip">کلمات پیشرفته بیش از ۵ حرف</div>
+          </button>
+        </div>
+        <textarea id="customWords" placeholder="هر کلمه را در یک خط بنویسید" dir="rtl"></textarea>
+        <div class="modal-buttons">
+          <button id="saveCustomWords">ذخیره</button>
+          <button id="closeModal">بستن</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Guide Modal -->
+    <div id="guideModal" class="modal">
+      <div class="modal-content guide-content">
+        <h2>راهنمای بازی</h2>
+        <div class="guide-tabs">
+          <button class="guide-tab active" data-tab="about">آموزش</button>
+          <button class="guide-tab" data-tab="description">توضیحات</button>
+        </div>
+        <div class="guide-content-container">
+          <div id="aboutContent" class="tab-content active">
+            <img src="/tr.jpg" alt="آموزش بازی">
+            <p class="contact-info">راه ارتباطی: aligoudarzi2727@gmail.com</p>
+          </div>
+          <div id="descriptionContent" class="tab-content">
+            <img src="/22.jpg" alt="توضیحات بازی">
+          </div>
+        </div>
+        <div class="modal-buttons">
+          <button id="closeGuide">بستن</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Results Modal -->
+    <div id="resultsModal" class="modal">
+      <div class="modal-content">
+        <h2>نتایج بازی</h2>
+        <div class="profile-section">
+          <input type="text" id="playerName" placeholder="نام خود را وارد کنید" dir="rtl">
+          <button id="saveProfile">ذخیره نام</button>
+        </div>
+        <div class="results-list">
+          <table id="resultsTable">
+            <thead>
+              <tr>
+                <th>تاریخ</th>
+                <th>زمان باقیمانده</th>
+                <th>امتیاز</th>
+                <th>تعداد کارت</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-buttons">
+          <button id="clearResults">پاک کردن نتایج</button>
+          <button id="closeResults">بستن</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
