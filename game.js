@@ -3,10 +3,10 @@ import { persianWords, themes } from './words.js';
 class MemoryGame {
   constructor() {
     // Add audio elements
-    this.successSound = new Audio('/music.mp3');
-    this.wrongSound = new Audio('/wrong.mp3');
-    this.tashvighSound = new Audio('/tashvigh.mp3');
-    this.backgroundMusic = new Audio('/music.mp3');
+    this.successSound = new Audio('./music.mp3');
+    this.wrongSound = new Audio('./wrong.mp3');
+    this.tashvighSound = new Audio('./tashvigh.mp3');
+    this.backgroundMusic = new Audio('./music.mp3');
     this.backgroundMusic.loop = true;
 
     this.gameBoard = document.getElementById('game-board');
